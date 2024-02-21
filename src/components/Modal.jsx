@@ -10,7 +10,7 @@ const Modal = () => {
     const [input, setInput] = useState("");
     const dispatch = useDispatch();
     const [users, setUsers] = useState([]);
-    const {userDetails} = useSelector(state => state.userDetails);
+    const { userDetails } = useSelector(state => state.userDetails);
 
     useEffect(() => {
         getUsers();
@@ -32,7 +32,7 @@ const Modal = () => {
             })
         }
     }
-        
+
     const handleOpenChat = (user) => {
         dispatch(setCurrentUser(user))
         dispatch(setModal(false))
@@ -58,17 +58,19 @@ const Modal = () => {
                 </div> */}
                 <div className='bg-[#6e36a5] p-5 ms-1 h-[90%] overflow-auto  rounded-xl'>
                     {users.map((user, i) => (
-                        <div onClick={() => handleOpenChat(user)} key={i} className=' flex justify-center items-center  hover:bg-[#936bbb] transition-all rounded-xl pe-3 mb-3'>
-                            <img src='/profile-icon.jpg' alt='user' className='border w-16 h-16 me-3 rounded-full' />
-                            <div className='flex justify-center items-center border-b border-gray-400'>
+                        <div onClick={() => handleOpenChat(user)} key={i} className=' flex justify-center   hover:bg-[#936bbb] transition-all rounded-xl md:ps-6 md:pe-9 md:mx-2  pe-7 ps-3 mb-3'>
+                            <div className='flex items-center w-[50%]'>
+                            <img src='/profile-icon.jpg' alt='user' className='border w-10 h-10 me-3 rounded-full' />
+                            <div className='flex justify-center items-center '>
                                 <div className='py-3'>
                                     <h1 className='text-xl font-semibold py-1'>{user?._id === userDetails._id ? "you" : user?.firstname} {user?._id !== userDetails._id && user?.lastname}</h1>
-                                    <h6 className='text-sm text-gray-400 font-semibold'>Hi there this is last message</h6>
+                                    <h6 className='text-sm text-gray-400 font-semibold'></h6>
                                 </div>
                                 <div className='ms-10  text-end'>
-                                    <h1 className='text-sm font-bold'>09:00</h1>
-                                    <button className='rounded-full bg-orange-400 px-2'>4</button>
+                                    {/* <h1 className='text-sm font-bold'>{user?._id === userDetails._id && user?.lastOnline}</h1> */}
+                                    {/* <button className='rounded-full bg-orange-400 px-2'>4</button> */}
                                 </div>
+                            </div>
                             </div>
                         </div>
                     ))}
