@@ -19,7 +19,6 @@ const SignIn = ({ setSignUp }) => {
         try {
             if (email && password) {
                 axios.post(`${baseURL}/signIn`, { email, password }).then(({ data }) => {
-                    console.log(data);
                     if (data) {
                         localStorage.setItem("userDetails", JSON.stringify(data?.data));
                         localStorage.setItem("token", data?.token)
