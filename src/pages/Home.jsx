@@ -71,7 +71,7 @@ const Home = () => {
                 </div>
             }
             <div className='h-screen  flex md:px-5 flex-col'>
-                <Navbar />
+                <Navbar socket={socket} />
                 <div className='flex justify-around h-[90%] overflow-auto w-full'>
                     {
                         mobile ? (

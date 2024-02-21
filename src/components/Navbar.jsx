@@ -22,7 +22,7 @@ function classNames(...classes) {
 
 
 
-export default function Navbar() {
+export default function Navbar({socket}) {
     const {modal} = useSelector(state => state.modal)
     const [topButton, setTopButton] = useState('Home')
     const { userDetails } = useSelector(state => state.userDetails);
@@ -31,6 +31,7 @@ export default function Navbar() {
 
     const handleUserNavigation = (item) => {
         if (item.name === "Sign out") {
+            socket.disconnect();
             handleSingOut();
         }
     }
