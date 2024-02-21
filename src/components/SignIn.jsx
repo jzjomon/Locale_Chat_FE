@@ -19,10 +19,17 @@ const SignIn = ({ setSignUp }) => {
         try {
             if (email && password) {
                 axios.post(`${baseURL}/signIn`, { email, password }).then(({ data }) => {
-                    localStorage.setItem("userDetails", JSON.stringify(data?.data));
-                    localStorage.setItem("token", data?.token)
-                    dispatch(setUserDetails(data?.data));
-                    navigate("/home");
+                    if (data) {
+                        localStorage.setItem("userDetails", JSON.stringify(data?.data));
+                        localStorage.setItem("token", data?.token)
+                        dispatch(setUserDetails(data?.data));
+                        navigate("/home");
+                    } else {
+                        Toast({
+                            title : "cannot sign in",
+                            icon : "error"
+                        })
+                    }
                 }).catch(({ response: { data } }) => {
                     Toast({
                         title: `${data?.message}`,
