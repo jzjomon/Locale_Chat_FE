@@ -66,8 +66,8 @@ const AllChats = ({ Chats }) => {
                                     <h1 className='text-xl font-semibold min-w-40 py-1'>{user?.users[0]?._id === userDetails._id ? user?.users[1]?.firstname : user?.users[0].firstname} {user?.users[0]?._id === userDetails._id ? user?.users[1]?.lastname : user?.users[0]?.lastname}</h1>
                                     <h6 className='text-sm text-gray-400 font-semibold'>{user?.lastmessage}</h6>
                                 </div>
-                                <div className='ms-10   text-end'>
-                                    <h1 className='text-sm font-bold w-10'>{ user?.users[0]?._id === userDetails._id ? user?.users[1]?.lastOnline  : user?.users[0]?.lastOnline}</h1>
+                                <div className='pe-3  text-end'>
+                                    <h1 className='text-xs font-semibold w-10'>{ user?.users[0]?._id === userDetails._id ? user?.users[1]?.lastOnline  : user?.users[0]?.lastOnline}</h1>
                                     {/* <button className='rounded-full bg-orange-400 px-2'>{user?.unread}</button> */}
                                 </div>
                             </div>
