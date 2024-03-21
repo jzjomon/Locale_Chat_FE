@@ -170,8 +170,8 @@ export default function Navbar({socket}) {
                                 </div>
                             </div>
 
-                            <Disclosure.Panel className="md:hidden">
-                                <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                            <Disclosure.Panel className="md:hidden h-[95vh]">
+                                <div className="space-y-1  px-2 pb-3 pt-2 sm:px-3">
                                     {/* {navigation.map((item) => (
                                         <Disclosure.Button
                                             key={item.name}
